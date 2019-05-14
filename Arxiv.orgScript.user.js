@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  try to take over the world!
 // @author       Jeffe
 // @match        https://arxiv.org/*
@@ -13,10 +13,15 @@
 
 (function() {
 //     'use strict';
+var arrayUnique = function (arr) {
+	return arr.filter(function(item, index){
+		return arr.indexOf(item) >= index;
+	});
+};
 
 function setCookiejffe(cname, cvalue) {
-  GM_setValue(cname,cvalue);
-//   console.log("Cookie Set!");
+  GM_setValue(cname,arrayUnique(cvalue));
+  console.log("cookie Set!");
 }
 
 function getCookiejffe(cname) {
@@ -58,10 +63,12 @@ function fromidjffe(str) {
 // }
 
 
+
 var id_lst_jffe = getCookiejffe('id_lst_jffe');
 
 function btnclickjffe(zEvent) {
       console.log("btnclickjffe called" + fromidjffe(this.getAttribute('id')));
+      id_lst_jffe = getCookiejffe('id_lst_jffe');
       id_lst_jffe.push(fromidjffe(this.getAttribute('id')));
       setCookiejffe('id_lst_jffe',id_lst_jffe);
 
