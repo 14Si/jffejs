@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Arxiv.orgScript
+// @name         Arxiv.org_Script
 // @namespace    http://tampermonkey.net/
 // @version      0.6
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
