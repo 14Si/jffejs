@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         KissAnimeScript
+// @name         KissAnime_Script
 // @namespace    http://tampermonkey.net/
 // @version      0.3
 // @description  hmmmmm
