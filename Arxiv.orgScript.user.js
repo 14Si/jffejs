@@ -74,7 +74,6 @@ function fromidjffe(str) {
 // }
 
 
-
 var id_lst_jffe = getCookiejffe('id_lst_jffe');
 
 function btnclickjffe(zEvent) {
