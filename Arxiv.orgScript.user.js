@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.8
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmmmm
 // @author       Silicon
@@ -14,6 +14,16 @@
 
 (function() {
 //     'use strict';
+	
+var keywords = ['sparsif','branch','3d','tree','graph','distil'];
+
+
+function strincludes(str_title){
+  return function(str_word){
+    return str_title.includes(str_word);
+  };
+}
+	
 function arrayUnique(arr) {
 	return arr.filter(function(item, index){
 		return arr.indexOf(item) >= index;
@@ -72,7 +82,7 @@ function btnclickjffe(zEvent) {
       id_lst_jffe = getCookiejffe('id_lst_jffe');
       id_lst_jffe.push(fromidjffe(this.getAttribute('id')));
       setCookiejffe('id_lst_jffe',id_lst_jffe);
-      this.setAttribute('class','red');
+      this.setAttribute('class','pressed');
 };
 
 var page_type_jffe = window.location.href.split('/')[3];
@@ -101,10 +111,16 @@ button {
   cursor: pointer;
 }
 
-button.red {
+button.pressed {
   background-color: #f44336; /* red */
   padding: 6px 14px;
   border: 4px solid rgba(0,0,0,.5);
+}
+
+button.recommended {
+  background-color: #4CAF50; /* Green */
+  padding: 6px 14px;
+  border: 4px solid rgba(244,67,54,.75);
 }
 </style>`;
   for (let elem_jffe of document.getElementsByTagName("dt")) {
@@ -113,10 +129,12 @@ button.red {
     let article_ID_jffe=elem_jffe.lastElementChild.firstElementChild.href.split('/')[4];
 
     add_id_jffe.innerHTML="Add Article ID: "+article_ID_jffe;
-
+    let str_title=elem_jffe.nextElementSibling.firstElementChild.firstElementChild.lastChild.textContent.trim().toLowerCase();
     add_id_jffe.setAttribute('id',toidjffe(article_ID_jffe));
     if(id_lst_jffe.includes(article_ID_jffe)){
-	    add_id_jffe.setAttribute('class','red');
+	    add_id_jffe.setAttribute('class','pressed');
+    } else if (keywords.map(strincludes(str_title)).includes(true)){
+	    add_id_jffe.setAttribute('class','recommended');
     };
     elem_jffe.firstElementChild.outerHTML=("<br><hr>"+elem_jffe.firstElementChild.outerHTML);
 
@@ -134,8 +152,14 @@ button.red {
   let article_ID_jffe=window.location.href.split('/')[4];
 
   add_id_jffe.innerHTML="Add Article ID: "+article_ID_jffe;
+  let str_title=abs_elem_jffe.lastChild.textContent.trim().toLowerCase();
   add_id_jffe.setAttribute('id',toidjffe(article_ID_jffe));
-
+  if(id_lst_jffe.includes(article_ID_jffe)){
+	add_id_jffe.setAttribute('class','pressed');
+  } else if (keywords.map(strincludes(str_title)).includes(true)){
+	add_id_jffe.setAttribute('class','recommended');
+  };
+	
   let abs_elem_jffe=document.querySelector("#abs > h1");
 
 
