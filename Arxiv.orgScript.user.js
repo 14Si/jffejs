@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmmmm
 // @author       Silicon
@@ -72,7 +72,7 @@ function btnclickjffe(zEvent) {
       id_lst_jffe = getCookiejffe('id_lst_jffe');
       id_lst_jffe.push(fromidjffe(this.getAttribute('id')));
       setCookiejffe('id_lst_jffe',id_lst_jffe);
-
+      this.setAttribute('class','red');
 };
 
 var page_type_jffe = window.location.href.split('/')[3];
@@ -88,6 +88,24 @@ hr {
   border-style: inset;
   border-width: 1px;
 }
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+button.red {
+  background-color: #f44336; /* red */
+  padding: 6px 14px;
+  border: 4px solid rgba(0,0,0,.5);
+}
 </style>`;
   for (let elem_jffe of document.getElementsByTagName("dt")) {
     let add_id_jffe = document.createElement("BUTTON");
@@ -97,7 +115,9 @@ hr {
     add_id_jffe.innerHTML="Add Article ID: "+article_ID_jffe;
 
     add_id_jffe.setAttribute('id',toidjffe(article_ID_jffe));
-
+    if(id_lst_jffe.includes(article_ID_jffe)){
+	    add_id_jffe.setAttribute('class','red');
+    };
     elem_jffe.firstElementChild.outerHTML=("<br><hr>"+elem_jffe.firstElementChild.outerHTML);
 
     elem_jffe.lastElementChild.appendChild(add_id_jffe);
