@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.4.5
-// @description  try to take over the world!
+// @version      0.5
+// @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @author       Jeffe
 // @match        https://arxiv.org/*
 // @grant        GM_setValue
