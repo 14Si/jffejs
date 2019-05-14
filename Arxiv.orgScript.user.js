@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
