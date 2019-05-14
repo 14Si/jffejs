@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         KissAnime Script
+// @name         KissAnimeScript
 // @namespace    http://tampermonkey.net/
-// @version      0.2
-// @description  try to take over the world!
-// @author       You
+// @version      0.3
+// @description  hmmmmm
+// @author       Silicon
 // @match        https://kissanime.ru/Anime/*
 // @grant        none
 // ==/UserScript==
