@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.9
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmmmm
 // @author       Silicon
@@ -150,7 +150,9 @@ button.recommended {
   let add_id_jffe = document.createElement("BUTTON");
 
   let article_ID_jffe=window.location.href.split('/')[4];
-
+	
+  let abs_elem_jffe=document.querySelector("#abs > h1");
+	
   add_id_jffe.innerHTML="Add Article ID: "+article_ID_jffe;
   let str_title=abs_elem_jffe.lastChild.textContent.trim().toLowerCase();
   add_id_jffe.setAttribute('id',toidjffe(article_ID_jffe));
@@ -160,7 +162,7 @@ button.recommended {
 	add_id_jffe.setAttribute('class','recommended');
   };
 	
-  let abs_elem_jffe=document.querySelector("#abs > h1");
+  
 
 
   abs_elem_jffe.appendChild(add_id_jffe);
