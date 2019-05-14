@@ -173,8 +173,6 @@ button.recommended {
     if (myDiv) {
         myDiv.addEventListener ("click", btnclickjffe , false);
     }
-} else {
-
 }
 
 })();
