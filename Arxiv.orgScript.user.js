@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.4.5
 // @description  try to take over the world!
 // @author       Jeffe
 // @match        https://arxiv.org/*
@@ -13,7 +13,7 @@
 
 (function() {
 //     'use strict';
-var arrayUnique = function (arr) {
+function arrayUnique(arr) {
 	return arr.filter(function(item, index){
 		return arr.indexOf(item) >= index;
 	});
