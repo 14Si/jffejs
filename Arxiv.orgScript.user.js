@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
-// @description  hmmmmmmmm
+// @description  hmmmmmm
 // @author       Silicon
 // @match        https://arxiv.org/*
 // @grant        GM_setValue
