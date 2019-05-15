@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.7
 // @updateURL    https://github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
@@ -104,7 +104,7 @@ arxiv_url+="&order=-announced_date_first";
 
 
 var page_type_jffe = window.location.href.split('/')[3];
-document.querySelector("#header").outerHTML+=String.raw`<style>
+document.querySelector("head").outerHTML+=String.raw`<style>
 hr {
   display: block;
   margin-top: 0.5em;
