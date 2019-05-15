@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.5
 // @description  hmmmmm
 // @updateURL    github.com/14Si/jffejs/blob/master/KissAnimeScript.user.js
 // @author       Silicon
