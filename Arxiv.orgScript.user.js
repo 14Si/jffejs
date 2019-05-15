@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.6
 // @updateURL    https://github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
@@ -139,15 +139,18 @@ button.recommended {
   border: 4px solid rgba(244,67,54,.75);
 }
 </style>`;
-var lstbtn=document.createElement("BUTTON");
-lstbtn.innerHTML="Open Marked"
-document.querySelector("#content").insertBefore(lstbtn,document.querySelector("#content").firstElementChild);
+	
+if (page_type_jffe=="list"||page_type_jffe=="abs"){
+	let lstbtn=document.createElement("BUTTON");
+	lstbtn.innerHTML="Open Marked"
+	document.querySelector("#content").insertBefore(lstbtn,document.querySelector("#content").firstElementChild);
 
-var myDivlst = document.querySelector("#content").firstElementChild;
-    if (myDivlst) {
-        myDivlst.addEventListener ("click", openlistlink , false);
-    }
-
+	let myDiv = document.querySelector("#content").firstElementChild;
+	    if (myDiv) {
+		myDiv.addEventListener ("click", openlistlink , false);
+	    }
+}
+	
 if (page_type_jffe=="list"){
   
   for (let elem_jffe of document.getElementsByTagName("dt")) {
