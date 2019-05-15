@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.5
 // @description  hmmmmm
-// @updateURL    github.com/14Si/jffejs/blob/master/KissAnimeScript.user.js
+// @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
 // @match        https://kissanime.ru/Anime/*
 // @grant        none
