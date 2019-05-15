@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
@@ -15,7 +15,7 @@
 (function() {
 //     'use strict';
 	
-var keywords = ['sparsif','branch','3d','tree','graph','distil'];
+var keywords = ['spars','branch','3d','tree','graph','distil'];
 
 
 function strincludes(str_title){
