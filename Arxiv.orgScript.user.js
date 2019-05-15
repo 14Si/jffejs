@@ -2,7 +2,7 @@
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
 // @version      1.4
-// @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
+// @updateURL    https://github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
 // @match        https://arxiv.org/*
