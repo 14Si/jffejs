@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.3
 // @updateURL    github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
@@ -84,6 +84,25 @@ function btnclickjffe(zEvent) {
       this.setAttribute('class','pressed');
 };
 
+function openlistlink(zEvent) {
+    let arxiv_url="https://arxiv.org/search/advanced?advanced=";
+    {
+let i=0;
+for (let arxiv_id of getCookiejffe('id_lst_jffe')) {
+  arxiv_url+=("&terms-"+i+"-term="+arxiv_id);
+  arxiv_url+=("&terms-"+i+"-field=paper_id");
+  arxiv_url+=("&terms-"+i+"-operator=OR");
+  i++;
+}
+arxiv_url+="&date-date_type=submitted_date";
+arxiv_url+="&abstracts=show";
+arxiv_url+="&size=50";
+arxiv_url+="&order=-announced_date_first";
+}
+      window.open(arxiv_url, '_blank');
+};
+
+
 var page_type_jffe = window.location.href.split('/')[3];
 document.querySelector("#header").outerHTML+=String.raw`<style>
 hr {
@@ -120,6 +139,15 @@ button.recommended {
   border: 4px solid rgba(244,67,54,.75);
 }
 </style>`;
+var lstbtn=document.createElement("BUTTON");
+lstbtn.innerHTML="Open Marked"
+document.querySelector("#content").insertBefore(lstbtn,document.querySelector("#content").firstElementChild);
+
+var myDivlst = document.querySelector("#content").firstElementChild;
+    if (myDivlst) {
+        myDivlst.addEventListener ("click", openlistlink , false);
+    }
+
 if (page_type_jffe=="list"){
   
   for (let elem_jffe of document.getElementsByTagName("dt")) {
