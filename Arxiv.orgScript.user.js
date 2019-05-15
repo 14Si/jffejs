@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Arxiv.org Script
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @updateURL    https://github.com/14Si/jffejs/raw/master/Arxiv.orgScript.user.js
 // @description  hmmmmmm
 // @author       Silicon
@@ -200,6 +200,11 @@ if (page_type_jffe=="list"){
     if (myDiv) {
         myDiv.addEventListener ("click", btnclickjffe , false);
     }
+} else if(page_type_jffe=="search"){
+	let mydiv = document.querySelector("body > main > div.content > div.columns > div.column.is-two-thirds-tablet > p");
+	if(mydiv) {
+		mydiv.remove();
+	}
 }
 
 })();
