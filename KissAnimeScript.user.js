@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
@@ -20,7 +20,9 @@
     }
 
     var testj0=document.querySelector("#adsIfrme > div > div > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)");
-
+    if(window.location.href.endsWith("&reb=1")){
+       window.location.href=window.location.href.replace(/&s=nova&reb=1/gi)
+    }
     testj0.href=testj0.href.concat("&s=beta2");
 
   setTimeout(function() {
