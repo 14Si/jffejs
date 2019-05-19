@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.9
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
@@ -30,6 +30,22 @@
   }, 100);
 
 
+    var intro_start_time=-1;
+    var intro_end_time=-1;
+    function video_intro_fn(){
+        if(intro_start_time<video.currentTime){
+            if(video.currentTime<intro_end_time){
+                video.currentTime=intro_end_time;
+                video.removeEventListener("timeupdate",video_intro_fn);
+            }
+        }
+    }
+
+    if(window.location.href.includes('Mahou-Sensei-Negima')){
+        intro_start_time=0;
+        intro_end_time=90;
+        video.addEventListener("timeupdate",video_intro_fn);
+    }
 
 //     window.alert(testj0.href);
 //     console.log(testj0.href);
