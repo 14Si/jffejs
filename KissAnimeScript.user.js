@@ -15,9 +15,9 @@
 
 
 
-    if (!window.location.href.endsWith(document.querySelector('#selectServer').lastChild.value)) {
-        window.location.href = document.querySelector('#selectServer').lastChild.value
-    }
+    // if (!window.location.href.endsWith(document.querySelector('#selectServer').lastChild.value)) {
+    //     window.location.href = document.querySelector('#selectServer').lastChild.value
+    // }
 
     var testj0 = document.querySelector("#adsIfrme > div > div > div:nth-child(1) > div:nth-child(2) > a:nth-child(2)");
     if (window.location.href.endsWith("&reb=1")) {
