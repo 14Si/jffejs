@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
@@ -30,12 +30,19 @@
   }, 100);
 
 
-    function video_skip_fn(skip_start_time,skip_end_time){
+    var elemvid=document.querySelector('video');
+    function video_skip_fn(skip_start_time_arg,skip_end_time){
+        let skip_start_time;
+        if(skip_start_time_arg<0){
+            skip_start_time=elemvid.duration+skip_start_time_arg;
+        } else {
+            skip_start_time=skip_start_time_arg;
+        }
         video.addEventListener('timeupdate',function(){
-            if(skip_start_time<video.currentTime){
-                if(video.currentTime<skip_end_time){
-                    video.currentTime=skip_end_time;
-                    video.removeEventListener('timeupdate',arguments.callee);
+            if(skip_start_time<elemvid.currentTime){
+                if(elemvid.currentTime<skip_end_time){
+                    elemvid.currentTime=skip_end_time;
+                    elemvid.removeEventListener('timeupdate',arguments.callee);
                 }
             }
         });
