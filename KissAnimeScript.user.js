@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
@@ -62,7 +62,8 @@
             video_skip_fn_inc(41,90);
         }
     } else if(window.location.href.includes('Anime/Mahou-Sensei-Negima/')){
-        video_skip_fn(0,90);
+        video_skip_fn_inc(1285,90);
+        video_skip_fn_inc(0,90);
     } else if(window.location.href.includes('Anime/Ore-no-Kanojo-to-Osananajimi-ga-Shuraba-Sugiru/')){
         if(window.location.href.includes('Episode-001')){
             video_skip_fn_inc(29.537888,90);
