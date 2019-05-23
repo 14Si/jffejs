@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Script
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScript.user.js
 // @author       Silicon
@@ -27,7 +27,7 @@
     if(testj0){
         testj0.href = testj0.href.concat("&s=beta2");
     
-        testj0.href=testj0.href.replace(/(id=\d+)/g,/(id=\d+)/g.exec(window.location.href)[0]);
+//         testj0.href=testj0.href.replace(/(id=\d+)/g,/(id=\d+)/g.exec(window.location.href)[0]);
     }
     
     
