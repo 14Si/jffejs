@@ -33,5 +33,7 @@
         document.body.removeChild(a);
     }
     
-
+    if(window.location.href=https://kissanime.ru/Special/AreYouHuman2?reURL=null){
+       window.location.reload();
+    }
 })();
