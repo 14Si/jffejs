@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Data Collecting Script
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      1.1
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScriptDataCollecting.user.js
 // @author       Silicon
@@ -33,7 +33,7 @@
         document.body.removeChild(a);
     }
     
-    if(window.location.href=https://kissanime.ru/Special/AreYouHuman2?reURL=null){
+    if(window.location.href='https://kissanime.ru/Special/AreYouHuman2?reURL=null'){
        window.location.reload();
     }
 })();
