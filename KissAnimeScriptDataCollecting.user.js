@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KissAnime Data Collecting Script
 // @namespace    http://tampermonkey.net/
-// @version      0.7
+// @version      0.9
 // @description  hmmmmm
 // @updateURL    https://github.com/14Si/jffejs/raw/master/KissAnimeScriptDataCollecting.user.js
 // @author       Silicon
